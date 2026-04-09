@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pinhook Co. | Strategic Reinvention for Women</title>
+  <meta name="description" content="Pinhook Co. helps women move from where they are to where they're meant to be — with strategy, clarity, and a real plan. Start with the BBYL Method." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1A2A3C;
+      --champagne: #C8A898;
+      --blush: #D4B5A8;
+      --cream: #F7F3EF;
+      --white: #FFFFFF;
+      --text-dark: #1A2A3C;
+      --text-mid: #4A5568;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.9s ease both; }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+    .delay-3 { animation-delay: 0.45s; }
+    .delay-4 { animation-delay: 0.6s; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: rgba(247, 243, 239, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200, 168, 152, 0.2);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .nav-tagline {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      font-weight: 400;
+    }
+
+    /* ── SECTIONS ── */
+    section { width: 100%; }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background-color: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(200,168,152,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1.18;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--champagne);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(247,243,239,0.75);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.4rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--champagne);
+      color: var(--navy);
+      background: var(--champagne);
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+      cursor: pointer;
+    }
+    .btn:hover { background: transparent; color: var(--champagne); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(247,243,239,0.4);
+    }
+    .btn-outline:hover { background: rgba(247,243,239,0.08); color: var(--white); }
+
+    /* ── WHO THIS IS FOR ── */
+    .who {
+      background: var(--cream);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .who h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 2rem;
+      line-height: 1.25;
+    }
+    .who p {
+      font-size: 1rem;
+      color: var(--text-mid);
+      max-width: 600px;
+      margin: 0 auto 1.2rem;
+      line-height: 1.85;
+    }
+    .who p strong {
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    /* ── BBYL METHOD ── */
+    .bbyl {
+      background: var(--navy);
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .bbyl::after {
+      content: 'BBYL';
+      position: absolute;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18vw;
+      font-weight: 600;
+      color: rgba(200,168,152,0.04);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      letter-spacing: 0.1em;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .bbyl .section-label { color: var(--champagne); }
+    .bbyl h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .bbyl .method-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 2.2rem;
+      display: block;
+    }
+    .bbyl p {
+      font-size: 1rem;
+      color: rgba(247,243,239,0.72);
+      max-width: 580px;
+      margin: 0 auto 1.2rem;
+      line-height: 1.85;
+    }
+    .bbyl p em {
+      color: var(--champagne);
+      font-style: italic;
+    }
+    .bbyl .btn { margin-top: 1.5rem; }
+
+    /* ── OFFER CARDS ── */
+    .offers {
+      background: var(--cream);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .offers h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 3rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.5rem;
+      max-width: 780px;
+      margin: 0 auto 0;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid rgba(200,168,152,0.3);
+      padding: 2.2rem 1.8rem;
+      text-align: left;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+    }
+    .card:hover { border-color: var(--champagne); transform: translateY(-3px); }
+    .card-tier {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 0.6rem;
+    }
+    .card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+    .card p {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 1.4rem;
+    }
+    .card-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+    }
+    .card .btn {
+      font-size: 0.7rem;
+      padding: 0.7rem 1.6rem;
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
+    .card .btn:hover { background: var(--champagne); border-color: var(--champagne); color: var(--navy); }
+    .card.featured { border-color: var(--champagne); background: var(--navy); }
+    .card.featured .card-tier { color: rgba(200,168,152,0.8); }
+    .card.featured h3 { color: var(--white); }
+    .card.featured p { color: rgba(247,243,239,0.65); }
+    .card.featured .card-price { color: var(--champagne); }
+    .card.featured .btn { background: var(--champagne); border-color: var(--champagne); color: var(--navy); }
+    .card.featured .btn:hover { background: transparent; color: var(--champagne); }
+
+    /* ── ABOUT ── */
+    .about {
+      background: var(--white);
+      padding: 6rem 2rem;
+    }
+    .about-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .about .section-label { color: var(--champagne); }
+    .about h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 2rem;
+      line-height: 1.25;
+    }
+    .about p {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .about p strong { color: var(--navy); font-weight: 500; }
+    .about-tagline {
+      margin-top: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--champagne);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--navy);
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 60%, rgba(200,168,152,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .final-cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .final-cta h2 em { color: var(--champagne); font-style: italic; }
+    .final-cta p {
+      font-size: 1rem;
+      color: rgba(247,243,239,0.68);
+      margin-bottom: 2.5rem;
+      max-width: 420px;
+      margin-left: auto; margin-right: auto;
+    }
+    .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--cream);
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(200,168,152,0.2);
+    }
+    footer p {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--champagne);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-tagline { display: none; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .cards { grid-template-columns: 1fr; }
+      .cta-group { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Pinhook Co.</a>
+    <span class="nav-tagline">Plan It. Build It. Own It.</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-eyebrow fade-up">Pinhook Co. · Strategic Reinvention for Women</p>
+      <h1 class="fade-up delay-1">
+        You've built a career.<br>
+        Now build something<br><em>of your own.</em>
+      </h1>
+      <p class="hero-sub fade-up delay-2">
+        Pinhook Co. helps women move from where they are to where they're meant to be — with strategy, clarity, and a real plan.
+      </p>
+      <a href="#offers" class="btn fade-up delay-3">Start with the BBYL Method</a>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section class="who">
+    <div class="container">
+      <span class="section-label">Who This Is For</span>
+      <h2>This is for the woman who knows it's time.</h2>
+      <p>Maybe you've been in the same season too long. Maybe the industry shifted, the role changed, or something inside you did. Maybe you've been building quietly in the background — and you're ready to stop playing small.</p>
+      <p><strong>Whatever brought you here — you're not starting over. You're starting with everything you've earned.</strong></p>
+      <p>Pinhook Co. was built for women who are done waiting for the "right time" and ready to move with intention.</p>
+    </div>
+  </section>
+
+  <!-- BBYL METHOD -->
+  <section class="bbyl">
+    <div class="container" style="position:relative;z-index:1;">
+      <span class="section-label">The Framework</span>
+      <h2>Build Before You Leave™</h2>
+      <span class="method-tag">The BBYL Method</span>
+      <p>Most women wait until they're out before they start building. That's the gap that creates financial instability, decision fatigue, and the chaos that makes people go back to what they left.</p>
+      <p>The BBYL Method flips that.</p>
+      <p>You build the foundation — income clarity, business structure, offer, and strategy — <em>before</em> you make the move. So when you leave, you leave ready.</p>
+      <a href="#offers" class="btn">Get the BBYL Method — $97</a>
+    </div>
+  </section>
+
+  <!-- OFFERS -->
+  <section class="offers" id="offers">
+    <div class="container">
+      <span class="section-label">Where to Start</span>
+      <h2>Where do you want to begin?</h2>
+      <div class="cards">
+
+        <div class="card">
+          <p class="card-tier">Free</p>
+          <h3>BBYL Method Readiness Check</h3>
+          <p>9 honest questions. 3 minutes. Instant clarity on where you are and what your next move should be.</p>
+          <div class="card-price">Free</div>
+          <a href="https://bbylcheck.carrd.co" class="btn">Take the Free Check</a>
+        </div>
+
+        <div class="card featured">
+          <p class="card-tier">Most Popular</p>
+          <h3>The BBYL Method Workbook</h3>
+          <p>A step-by-step framework that walks you from idea to income-ready foundation — before you ever leave.</p>
+          <div class="card-price">$97</div>
+          <a href="#" class="btn">Get the Workbook</a>
+        </div>
+
+        <div class="card">
+          <p class="card-tier">1:1 Strategy</p>
+          <h3>Strategy Call with Andrea</h3>
+          <p>One focused session to map your path, pressure-test your plan, and leave with your next 90 days clear.</p>
+          <div class="card-price">$297</div>
+          <a href="#" class="btn">Book a Call</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about-inner">
+      <span class="section-label">About Andrea</span>
+      <h2>I've been where you are.</h2>
+      <p>I spent over 15 years inside business operations — government, defense, financial services. I built systems, led teams, and checked every box the corporate ladder put in front of me.</p>
+      <p>And then I learned what happens when the ladder disappears.</p>
+      <p>What I built on the other side of that — on my own terms, with strategy instead of panic — became the foundation for Pinhook Co. Now I help women do what I wish someone had helped me do: <strong>build before they leave, so they never have to choose between stability and freedom.</strong></p>
+      <p class="about-tagline">Plan It. Build It. Own It.</p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Your next chapter is<br><em>already in motion.</em></h2>
+      <p>You don't need more time. You need a plan.</p>
+      <div class="cta-group">
+        <a href="https://bbylcheck.carrd.co" class="btn">Take the Free Readiness Check</a>
+        <a href="#offers" class="btn btn-outline">Get the BBYL Method</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>pinhookco.com &nbsp;·&nbsp; @theandreaclark &nbsp;·&nbsp; © 2026 Pinhook Co.</p>
+  </footer>
+
+</body>
+</html>
