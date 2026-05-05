@@ -30,7 +30,7 @@
       overflow-x: hidden;
     }
 
-    /* ── ANIMATIONS ── */
+    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -41,7 +41,7 @@
     .delay-3 { animation-delay: 0.45s; }
     .delay-4 { animation-delay: 0.6s; }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -67,16 +67,16 @@
       font-weight: 400;
     }
 
-    /* ── SECTIONS ── */
+    /* SECTIONS */
     section { width: 100%; }
 
     .container {
-      max-width: 760px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       min-height: 100vh;
       background-color: var(--navy);
@@ -143,7 +143,7 @@
     }
     .btn-outline:hover { background: rgba(247,243,239,0.08); color: var(--white); }
 
-    /* ── WHO THIS IS FOR ── */
+    /* WHO THIS IS FOR */
     .who {
       background: var(--cream);
       padding: 6rem 2rem;
@@ -169,9 +169,10 @@
       font-size: 1.08rem;
       color: var(--navy);
       font-weight: 500;
+      margin-bottom: 1rem;
     }
 
-    /* ── BBYL METHOD ── */
+    /* BBYL METHOD */
     .bbyl {
       background: var(--navy);
       padding: 6rem 2rem;
@@ -212,6 +213,7 @@
     }
     .bbyl p {
       font-size: 1.08rem;
+      margin-bottom: 1rem;
     }
     .bbyl p em {
       color: var(--champagne);
@@ -219,7 +221,7 @@
     }
     .bbyl .btn { margin-top: 1.5rem; }
 
-    /* ── OFFER CARDS ── */
+    /* OFFER CARDS */
     .offers {
       background: var(--cream);
       padding: 6rem 2rem;
@@ -234,10 +236,10 @@
     }
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1.5rem;
-      max-width: 780px;
-      margin: 0 auto 0;
+      max-width: 900px;
+      margin: 0 auto;
     }
     .card {
       background: var(--white);
@@ -282,6 +284,8 @@
       background: var(--navy);
       border-color: var(--navy);
       color: var(--white);
+      width: 100%;
+      text-align: center;
     }
     .card .btn:hover { background: var(--champagne); border-color: var(--champagne); color: var(--navy); }
     .card.featured { border-color: var(--champagne); background: var(--navy); }
@@ -292,7 +296,42 @@
     .card.featured .btn { background: var(--champagne); border-color: var(--champagne); color: var(--navy); }
     .card.featured .btn:hover { background: transparent; color: var(--champagne); }
 
-    /* ── ABOUT ── */
+    /* Coming Soon card */
+    .card.coming-soon {
+      border: 1px dashed rgba(200,168,152,0.5);
+      background: rgba(237,232,225,0.5);
+      opacity: 0.85;
+    }
+    .card.coming-soon .card-tier { color: var(--champagne); }
+    .card.coming-soon h3 { color: var(--navy); }
+    .card.coming-soon .card-price { color: var(--navy); }
+    .coming-soon-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: var(--champagne);
+      color: var(--navy);
+      padding: 0.25rem 0.6rem;
+      margin-bottom: 0.8rem;
+    }
+    .card.coming-soon .btn-disabled {
+      font-size: 0.7rem;
+      padding: 0.7rem 1.6rem;
+      background: transparent;
+      border: 1px solid rgba(200,168,152,0.4);
+      color: var(--champagne);
+      width: 100%;
+      text-align: center;
+      display: block;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      cursor: default;
+    }
+
+    /* ABOUT */
     .about {
       background: var(--white);
       padding: 6rem 2rem;
@@ -312,6 +351,7 @@
     }
     .about p {
       font-size: 1.08rem;
+      margin-bottom: 1rem;
     }
     .about p strong { color: var(--navy); font-weight: 500; }
     .about-tagline {
@@ -322,7 +362,7 @@
       color: var(--navy);
     }
 
-    /* ── FINAL CTA ── */
+    /* FINAL CTA */
     .final-cta {
       background: var(--navy);
       padding: 6rem 2rem;
@@ -354,7 +394,7 @@
     }
     .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
       background: var(--cream);
       padding: 2rem;
@@ -368,7 +408,7 @@
       color: var(--navy);
     }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 600px) {
       nav { padding: 1rem 1.5rem; }
       .nav-tagline { display: none; }
@@ -420,8 +460,8 @@
       <span class="method-tag">The BBYL Method</span>
       <p>Most women wait until they're out before they start building. That's the gap that creates financial instability, decision fatigue, and the chaos that makes people go back to what they left.</p>
       <p>The BBYL Method flips that.</p>
-      <p>You build the foundation — income clarity, business structure, offer, and strategy — <em>before</em> you make the move. So when you leave, you leave ready.</p>
-      <a href="https://stan.store/andreaclark/p/get-my-build-before-you-leave-workbook-now" class="btn">Get the BBYL Method — $97</a>
+      <p>You build the foundation — income clarity, business structure, offer, and strategy — before you make the move. So when you leave, you leave ready.</p>
+      <a href="https://stan.store/andreaclark/p/get-my-build-before-you-leave-workbook-now" class="btn">Get the BBYL Method Workbook — $97</a>
     </div>
   </section>
 
@@ -432,6 +472,7 @@
       <h2>Where do you want to begin?</h2>
       <div class="cards">
 
+        <!-- Free Check -->
         <div class="card">
           <p class="card-tier">Free</p>
           <h3>BBYL Method Readiness Check</h3>
@@ -440,19 +481,31 @@
           <a href="https://bbylcheck.pinhookco.com" class="btn">Take the Free Check</a>
         </div>
 
+        <!-- Workbook -->
         <div class="card featured">
           <p class="card-tier">Most Popular</p>
           <h3>The BBYL Method Workbook</h3>
           <p>A step-by-step framework that walks you from idea to income-ready foundation — before you ever leave.</p>
           <div class="card-price">$97</div>
-          <a href="https://stan.store/andreaclark/p/get-my-build-before-you-leave-workbook-now" class="btn">Get the Workbook</a>
+          <a href="https://stan.store/andreaclark/p/get-my-build-before-you-leave-workbook-now" class="btn">Get the BBYL Method Workbook</a>
         </div>
 
+        <!-- Assessment - Coming Soon -->
+        <div class="card coming-soon">
+          <p class="card-tier">1:1 Assessment</p>
+          <span class="coming-soon-badge">Coming Soon</span>
+          <h3>Transition Readiness Assessment</h3>
+          <p>A personalized review of exactly where you are — with a custom action plan delivered by Andrea via video.</p>
+          <div class="card-price">$197</div>
+          <a href="https://stan.store/andreaclark/p/bbyl-strategy-call" class="btn" style="background:var(--navy);border-color:var(--navy);color:var(--white);">Join the Waitlist</a>
+        </div>
+
+        <!-- Strategy Call -->
         <div class="card">
           <p class="card-tier">1:1 Strategy</p>
           <h3>Strategy Call with Andrea</h3>
           <p>One focused session to map your path, pressure-test your plan, and leave with your next 90 days clear.</p>
-          <div class="card-price">$297</div>
+          <div class="card-price">$397</div>
           <a href="https://stan.store/andreaclark/p/bbyl-strategy-call" class="btn">Book a Call</a>
         </div>
 
@@ -479,7 +532,9 @@
       <p>You don't need more time. You need a plan.</p>
       <div class="cta-group">
         <a href="https://bbylcheck.pinhookco.com" class="btn">Take the Free Readiness Check</a>
-        <a href="https://stan.store/andreaclark/p/get-my-build-before-you-leave-workbook-now" class="btn btn-outline">Get the BBYL Method</a>
+        <a href="https://stan.store/andreaclark/p/get-my-build-before-you-leave-workbook-now" class="btn btn-outline">Get the BBYL Method Workbook</a>
+        <a href="https://stan.store/andreaclark/p/bbyl-strategy-call" class="btn btn-outline">Join the Assessment Waitlist</a>
+        <a href="https://stan.store/andreaclark/p/bbyl-strategy-call" class="btn btn-outline">Book a Strategy Call</a>
       </div>
     </div>
   </section>
